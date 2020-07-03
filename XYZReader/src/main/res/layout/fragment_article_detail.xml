@@ -12,9 +12,10 @@
         android:layout_height="match_parent">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
             <LinearLayout
                 android:id="@+id/photo_container"
@@ -34,19 +35,13 @@
                      />
             </LinearLayout>
 
-            <com.example.xyzreader.ui.MaxWidthLinearLayout
-                android:orientation="vertical"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:maxWidth="@dimen/detail_card_max_width"
+                android:orientation="vertical"
                 android:background="@color/article_header_background"
                 android:elevation="@dimen/elevation_xsmall"
-                app:layout_constraintTop_toBottomOf="@+id/photo_container"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 >
-
                 <LinearLayout
                     android:id="@+id/meta_bar"
                     android:layout_width="match_parent"
@@ -58,12 +53,13 @@
                     android:paddingRight="@dimen/detail_inner_horiz_margin"
                     android:paddingTop="@dimen/detail_metabar_vert_padding"
                     android:paddingBottom="@dimen/detail_metabar_vert_padding"
-                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding">
-
+                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
+                    >
                     <TextView
                         android:id="@+id/article_title"
                         style="?android:attr/textAppearanceLarge"
-                        android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_width="@dimen/article_width"
                         android:layout_height="wrap_content"
                         android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
                         android:textColor="#fff"
@@ -74,26 +70,30 @@
                     <TextView
                         android:id="@+id/article_byline"
                         style="?android:attr/textAppearanceSmall"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/article_width"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:textColor="#8fff" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/article_body"
                     style="?android:attr/textAppearanceMedium"
-                    android:layout_width="match_parent"
+                    android:layout_width="@dimen/article_width"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
                     android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                    android:layout_gravity="center"
+                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+                    android:paddingTop="@dimen/padding_medium"
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
                     android:textColor="@color/text_color"
                     android:textColorLink="@color/theme_accent"
                     android:textSize="@dimen/detail_body_text_size"
-                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
-
-            </com.example.xyzreader.ui.MaxWidthLinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing."
+                    />
+            </LinearLayout>
+        </LinearLayout>
 
 
     </com.example.xyzreader.ui.ObservableScrollView>
