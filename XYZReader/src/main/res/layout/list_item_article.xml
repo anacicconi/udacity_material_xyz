@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:minHeight="@dimen/list_item_height"
+    android:layout_margin="@dimen/margin_xsmall"
+    android:background="@drawable/item_list_background"
+    android:elevation="@dimen/elevation_small"
+    >
+
+    <com.example.xyzreader.ui.DynamicHeightNetworkImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/photo_placeholder"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/article_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_medium"
+        android:paddingTop="@dimen/padding_medium"
+        android:paddingRight="@dimen/padding_medium"
+        android:paddingBottom="@dimen/padding_xsmall"
+        tools:text="The Scarlet Plague"
+        style="@style/Bacon.ListTitle.TextAppearance"
+        />
+
+    <TextView
+        android:id="@+id/article_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_medium"
+        android:paddingRight="@dimen/padding_medium"
+        android:paddingBottom="@dimen/padding_medium"
+        android:maxLines="2"
+        android:ellipsize="end"
+        tools:text="Feb 1,1912 \nby Bla Jack London"
+        />
+</LinearLayout>
